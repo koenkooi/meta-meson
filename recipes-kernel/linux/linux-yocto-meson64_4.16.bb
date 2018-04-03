@@ -50,7 +50,25 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
         file://0038-ARM64-dts-meson-gxl-nexbox-a95x-enable-the-USB-contr.patch \
         file://0039-ARM64-dts-meson-gxm-khadas-vim2-enable-the-USB-contr.patch \
 	file://defconfig \
-"
+        file://0001-clock-meson8b-add-clocks-necessary-for-VDEC1.patch \
+        file://0002-soc-meson-add-power-controller-for-vdec.patch \
+        file://0003-media-meson-add-V4L2-M2M-video-decoder.patch \
+        file://0004-ARM-dts-meson8b-add-video-decoder-pwrc-entry.patch \
+        file://0005-Add-the-H.264-vdec-firmware.patch \
+        file://0006-media-meson-vdec-Many-fixes-stability-updates.patch \
+        file://0007-media-meson-vdec-Change-capture-pixfmt-to-V4L2_PIX_F.patch \
+        file://0008-media-meson-vdec-Many-fixes-stability-updates-2.patch \
+        file://0009-media-meson-vdec-Map-vb2-buffers-to-the-canvases-mor.patch \
+        file://0010-media-meson-vdec-the-H.264-vdec-is-now-usable-on-s80.patch \
+        file://0011-meson-gxl-add-vdec-support.patch \
+        file://0012-meson-vdec-several-fixups-for-gstreamer-compat.patch \
+        file://0013-meson-vdec-Rewrite-design.patch \
+        file://0014-meson-vdec-Add-forgotten-H.264-ref-MV-alloc.patch \
+        file://0015-meson-gxl-vdec-Bump-VDEC_1-clock-to-648MHz.patch \
+        file://0016-meson-vdec-Actually-output-NV12M.patch \
+        file://0017-meson-vdec-Fix-multiple-DMA-leaks.patch \
+        file://0018-Switch-back-vdec-clock-to-666MHz.patch \
+        "
 
 KERNEL_VERSION_SANITY_SKIP="1"
 
