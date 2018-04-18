@@ -79,6 +79,11 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
            file://0011-meson-vdec-esparser-Don-t-stall-on-input.patch \
            file://0012-meson-vdec-Limit-input-buffers-to-17.patch \
            file://0013-meson-vdec-hevc-Fetch-and-process-RPM.patch \
+           file://0001-meson-vdec-h264-Increase-the-minimum-amount-of-buffe.patch \
+           file://0002-dts-meson-gxbb-add-vdec-entries.patch \
+           file://0003-meson-vdec-fix-crash-on-module-remove.patch \
+           file://0004-meson-vdec-hevc-push-current-progress.patch \
+           file://0005-meson-vdec-hevc-Fix-a-really-really-dumb-mistake.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"
