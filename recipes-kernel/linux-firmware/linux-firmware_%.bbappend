@@ -16,7 +16,7 @@ do_install_append_meson-gxbb () {
 }
 
 do_install_append_meson-gxl () {
-	install -Dm 0644 ${WORKDIR}/gxtvbb_vh264_mc ${D}/lib/firmware/meson/gxl/gxtvbb_vh264_mc
+	install -Dm 0644 ${WORKDIR}/gxtvbb_vh264_mc ${D}/lib/firmware/meson/gxl/vh264_mc
 }
 
 do_install_append () {
