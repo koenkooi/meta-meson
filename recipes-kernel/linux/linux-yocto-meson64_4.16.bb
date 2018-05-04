@@ -83,6 +83,10 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
            file://0003-meson-vdec-fix-crash-on-module-remove.patch \
            file://0004-meson-vdec-hevc-push-current-progress.patch \
            file://0005-meson-vdec-hevc-Fix-a-really-really-dumb-mistake.patch \
+           file://0006-meson-vdec-per-soc-compatible-list.patch \
+           file://0007-meson-vdec-hevc-First-working-initial-support.patch \
+           file://0008-meson-vdec-hevc-update-to-the-latest-firmware.patch \
+           file://0009-meson-vdec-hevc-enable-mcrcc.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"
