@@ -3,7 +3,7 @@ require ${PN}.inc
 PATCHTOOL = "git"
 PATCH_COMMIT_FUNCTIONS = "1"
 
-SRC_URI = "git://github.com/yuq/mesa-lima.git;branch=lima-18.1 \
+SRC_URI = "git://gitlab.freedesktop.org/lima/mesa.git;protocol=https;branch=lima-18.1 \
            file://0001-Makefile.vulkan.am-explictly-add-lib-expat-to-intel-.patch \
            file://0003-winsys-svga-drm-Include-sys-types.h.patch \
            file://0004-hardware-gloat.patch \
@@ -11,7 +11,7 @@ SRC_URI = "git://github.com/yuq/mesa-lima.git;branch=lima-18.1 \
            "
 
 PV = "18.1.0+git${SRCPV}"
-SRCREV = "2adeaa87e813644dcf70f903c0ac909d65ef2972"
+SRCREV = "f3d3d76b452cd40cc418b10285e68552556a25c5"
 
 S = "${WORKDIR}/git"
 
