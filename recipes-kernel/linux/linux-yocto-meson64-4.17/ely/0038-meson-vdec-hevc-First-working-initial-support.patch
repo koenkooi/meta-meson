@@ -1,7 +1,7 @@
-From d6d8aaf4b500d6084286f9779f5222ede4a93ee3 Mon Sep 17 00:00:00 2001
+From b3ee475b4ebfc0d01eb4000193d0788c7a55a7aa Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Tue, 24 Apr 2018 08:33:11 +0200
-Subject: [PATCH 38/42] meson: vdec: hevc: First "working" initial support
+Subject: [PATCH 38/44] meson: vdec: hevc: First "working" initial support
 
 We can now decode the start of an HEVC bitstream, for example the first 120 frames
 of jellyfish-10-mbps-hd-hevc.mkv (and then we get problems with overflowing frames/refs

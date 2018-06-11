@@ -1,7 +1,7 @@
-From 592080bbb1307b49b416ac0f385bdec3323da3d4 Mon Sep 17 00:00:00 2001
+From f6eccd300e0431e5d2689c0ac060f5175cd5b1b9 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Sat, 31 Mar 2018 22:28:26 +0200
-Subject: [PATCH 13/42] meson: vdec: Rewrite design
+Subject: [PATCH 13/44] meson: vdec: Rewrite design
 
 Try to modularize by splitting the vdec into its different VDECS,
 as well as differentiating the codecs.

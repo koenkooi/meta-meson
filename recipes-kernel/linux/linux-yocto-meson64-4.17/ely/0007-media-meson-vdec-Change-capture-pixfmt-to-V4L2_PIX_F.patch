@@ -1,7 +1,7 @@
-From 9aec0ef6fbd5677970e8add5c75b4ac94d9a8699 Mon Sep 17 00:00:00 2001
+From c2bd520fcd743094954a568af1777230925e2769 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <raptorteak@gmail.com>
 Date: Sat, 17 Mar 2018 18:06:35 +0100
-Subject: [PATCH 07/42] media: meson-vdec: Change capture pixfmt to
+Subject: [PATCH 07/44] media: meson-vdec: Change capture pixfmt to
  V4L2_PIX_FMT_NV21M
 
 Turns out FFmpeg won't recognize V4L2_PIX_FMT_NV21, which is why it was set to V4L2_PIX_FMT_NV12 previously.

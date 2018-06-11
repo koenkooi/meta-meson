@@ -1,7 +1,7 @@
-From a498970a4373e99af38ecddcf214b552d6d5526e Mon Sep 17 00:00:00 2001
+From ccc78218c7603a819ac245c4ad01b42a1307a3be Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Thu, 26 Apr 2018 00:03:35 +0200
-Subject: [PATCH 41/42] meson: vdec: General updates
+Subject: [PATCH 41/44] meson: vdec: General updates
 
 This commits removes the vdec pwrc and instead manages
 power/clk in the driver directly. This allows having
@@ -31,10 +31,10 @@ And also general cleanups overall..
  delete mode 100644 drivers/soc/amlogic/meson-pwrc-vdec.c
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-index 4cc7d79..36832cc 100644
+index cf1ad45..88a5cb5 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-@@ -369,12 +369,6 @@
+@@ -347,12 +347,6 @@
  					amlogic,hhi-sysctrl = <&sysctrl>;
  				};
  
@@ -47,7 +47,7 @@ index 4cc7d79..36832cc 100644
  				clkc_AO: clock-controller {
  					compatible = "amlogic,meson-gx-aoclkc";
  					#clock-cells = <1>;
-@@ -514,10 +508,9 @@
+@@ -492,10 +486,9 @@
  
  			interrupts = <GIC_SPI 44 IRQ_TYPE_EDGE_RISING
  				      GIC_SPI 32 IRQ_TYPE_EDGE_RISING>;
@@ -60,10 +60,10 @@ index 4cc7d79..36832cc 100644
  
  		vpu: vpu@d0100000 {
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
-index 7b8bb7b..96d1fce 100644
+index 1ec33c1..5594b3e 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
-@@ -800,17 +800,6 @@
+@@ -775,17 +775,6 @@
  
  &vdec {
  	compatible = "amlogic,meson-gxbb-vdec";
@@ -84,10 +84,10 @@ index 7b8bb7b..96d1fce 100644
 +	clock-names = "dos_parser", "vdec_1", "vdec_hevc";
  };
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-index 3d8547b..6cf114c 100644
+index f6cedd8..87e3a6c 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-@@ -808,17 +808,6 @@
+@@ -784,17 +784,6 @@
  
  &vdec {
  	compatible = "amlogic,meson-gxl-vdec";

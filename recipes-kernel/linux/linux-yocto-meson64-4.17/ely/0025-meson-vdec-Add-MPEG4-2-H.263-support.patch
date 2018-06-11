@@ -1,7 +1,7 @@
-From 4aa79131b6751f1350fd097bd97c41c19145696e Mon Sep 17 00:00:00 2001
+From 143f1b7bf3a59425ee9f4b3e5992fd7949ea57f2 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Sat, 7 Apr 2018 17:37:55 +0200
-Subject: [PATCH 25/42] meson: vdec: Add MPEG4-2/H.263 support
+Subject: [PATCH 25/44] meson: vdec: Add MPEG4-2/H.263 support
 
 Was only tested with a few Xvid videos, proper playback of any
 MPEG4-2/H263 material is not guaranteed.

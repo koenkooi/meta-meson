@@ -1,7 +1,7 @@
-From 768f147bdc7543710eb1f11112ee049088493955 Mon Sep 17 00:00:00 2001
+From ea83ad001bbeace033e4e821a31d499768f1404f Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <raptorteak@gmail.com>
 Date: Mon, 26 Mar 2018 18:52:39 +0200
-Subject: [PATCH 08/42] media: meson-vdec: Many fixes & stability updates [2]
+Subject: [PATCH 08/44] media: meson-vdec: Many fixes & stability updates [2]
 
 * Can successfully decode a 5mn 720p video and a 20mn 1080p video (H.264)
 * Reworked the try/get/set format logic. Still not optimal but actually allows variable frame sizes. Mostly copied from venus.

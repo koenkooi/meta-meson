@@ -1,7 +1,7 @@
-From f2a5fb20478bbb7289d7d084d2d74f06fad82979 Mon Sep 17 00:00:00 2001
+From f9970f02db625fde49f78128d5331289c3dc12c5 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Thu, 29 Mar 2018 21:02:32 +0200
-Subject: [PATCH 11/42] meson: gxl: add vdec support
+Subject: [PATCH 11/44] meson: gxl: add vdec support
 
 This adds the various DTS/clock/firmware pieces to run the vdec
 on GXL (tested on S905X).
@@ -29,10 +29,10 @@ Known bugs: This support seems to disable the VPU (drm) during boot.
  create mode 100644 gxtvbb_vh264_mc
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-index e4ebc87..d6a57b1 100644
+index 3c31e21..9ffdb36 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-@@ -369,6 +369,12 @@
+@@ -347,6 +347,12 @@
  					amlogic,hhi-sysctrl = <&sysctrl>;
  				};
  
@@ -45,7 +45,7 @@ index e4ebc87..d6a57b1 100644
  				clkc_AO: clock-controller {
  					compatible = "amlogic,meson-gx-aoclkc";
  					#clock-cells = <1>;
-@@ -499,6 +505,21 @@
+@@ -477,6 +483,21 @@
  			};
  		};
  
@@ -68,10 +68,10 @@ index e4ebc87..d6a57b1 100644
  			compatible = "amlogic,meson-gx-vpu";
  			reg = <0x0 0xd0100000 0x0 0x100000>,
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-index a11ac15..2f7bad2 100644
+index dba365e..ac91a3d 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-@@ -805,3 +805,21 @@
+@@ -781,3 +781,21 @@
  	compatible = "amlogic,meson-gxl-vpu", "amlogic,meson-gx-vpu";
  	power-domains = <&pwrc_vpu>;
  };

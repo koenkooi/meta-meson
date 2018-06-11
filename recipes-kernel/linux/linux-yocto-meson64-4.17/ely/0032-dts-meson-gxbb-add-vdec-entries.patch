@@ -1,17 +1,17 @@
-From 5e3e4ed40c4cab7ccdc660aed5edbfb575a69224 Mon Sep 17 00:00:00 2001
+From f17212aed31bceadbf615ca4067e73a80b4632de Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Fri, 13 Apr 2018 06:29:07 +0200
-Subject: [PATCH 32/42] dts: meson-gxbb: add vdec entries
+Subject: [PATCH 32/44] dts: meson-gxbb: add vdec entries
 
 ---
  arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi | 16 ++++++++++++++++
  1 file changed, 16 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
-index 42775a8..3398d04 100644
+index 562c26a..e31b459 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
-@@ -797,3 +797,19 @@
+@@ -772,3 +772,19 @@
  	compatible = "amlogic,meson-gxbb-vpu", "amlogic,meson-gx-vpu";
  	power-domains = <&pwrc_vpu>;
  };

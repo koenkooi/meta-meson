@@ -1,7 +1,7 @@
-From 923e533a16c1f1fabc309ed7a658478d3517c1d1 Mon Sep 17 00:00:00 2001
+From aad134163c4c29875d661643e3aa3b96b67ee26f Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Thu, 5 Apr 2018 13:55:07 +0200
-Subject: [PATCH 21/42] meson: vdec: esparser: Fix VIFIFO end bound
+Subject: [PATCH 21/44] meson: vdec: esparser: Fix VIFIFO end bound
 
 This fixes video artifacts that can be seen when decoding H.264,
 when the VIFIFO wraps around.

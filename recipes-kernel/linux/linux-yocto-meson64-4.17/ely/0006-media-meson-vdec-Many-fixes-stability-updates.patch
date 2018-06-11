@@ -1,7 +1,7 @@
-From c03239fbda1fc29a8f2c3e76b70d1fbb650d0330 Mon Sep 17 00:00:00 2001
+From fd91dcc60d436cf73a66b9c97260f65eae5affb6 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <raptorteak@gmail.com>
 Date: Fri, 16 Mar 2018 14:48:16 +0100
-Subject: [PATCH 06/42] media: meson-vdec: Many fixes & stability updates
+Subject: [PATCH 06/44] media: meson-vdec: Many fixes & stability updates
 
 * Differentiate DPB from VIFIFO buffers. They were mixed before which of course lead to fatal errors..
 * Very simple logic for input/output buffers. FFmpeg can retrieve 1344 frames of a test file and then the decoder freezes.

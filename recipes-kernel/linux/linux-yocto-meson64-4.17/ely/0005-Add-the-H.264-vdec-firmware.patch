@@ -1,7 +1,7 @@
-From 5133953ead61f9edadc54dd4e76b97e2dd10b76d Mon Sep 17 00:00:00 2001
+From 3a6178a0150b2bbdbd788ec219982d3f391eea89 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <raptorteak@gmail.com>
 Date: Thu, 15 Mar 2018 14:26:27 +0100
-Subject: [PATCH 05/42] Add the H.264 vdec firmware
+Subject: [PATCH 05/44] Add the H.264 vdec firmware
 
 For those who want to test..
 To copy in /lib/firmware/meson/m8/

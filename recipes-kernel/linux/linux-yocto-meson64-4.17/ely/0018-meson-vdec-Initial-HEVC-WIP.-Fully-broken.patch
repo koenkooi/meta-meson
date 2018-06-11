@@ -1,7 +1,7 @@
-From 98851a1fb02bac61f3791da5fddb1dcc78084ac3 Mon Sep 17 00:00:00 2001
+From 714e0678c0db0f83063479e54a5586d826047a42 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Tue, 3 Apr 2018 15:04:40 +0200
-Subject: [PATCH 18/42] meson: vdec: Initial HEVC WIP. Fully broken.
+Subject: [PATCH 18/44] meson: vdec: Initial HEVC WIP. Fully broken.
 
 The code changes were getting big so push the initial WIP.
 Everything is still configured so that you can use H.264.
@@ -51,10 +51,10 @@ and ultimately we want dfs.
  create mode 100644 vh265_mc
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-index 0ea9508..019e2d8 100644
+index 94a1dfa..0d414f9 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-@@ -811,9 +811,11 @@
+@@ -787,9 +787,11 @@
  };
  
  &pwrc_vdec {

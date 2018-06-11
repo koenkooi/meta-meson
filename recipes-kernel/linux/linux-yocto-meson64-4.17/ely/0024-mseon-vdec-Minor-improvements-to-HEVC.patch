@@ -1,7 +1,7 @@
-From 76506525036c42eb72f848b7bba10ff8b5a45697 Mon Sep 17 00:00:00 2001
+From 17009b8e781b156a8bcb61b8b135a7267d4b9852 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Sat, 7 Apr 2018 02:07:19 +0200
-Subject: [PATCH 24/42] mseon: vdec: Minor improvements to HEVC
+Subject: [PATCH 24/44] mseon: vdec: Minor improvements to HEVC
 
 The esparsing/fetching is now working and we are able to
 trigger our first HEVC ISR: HEVC_SLICE_SEGMENT_DONE !

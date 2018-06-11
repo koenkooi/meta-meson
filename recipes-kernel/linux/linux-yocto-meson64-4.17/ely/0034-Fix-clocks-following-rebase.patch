@@ -1,7 +1,7 @@
-From 94d9d1dad27ccc8e61453284e758c5876e597c19 Mon Sep 17 00:00:00 2001
+From 3427a6880e9391a5e1268a8089af35b43cd721d6 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Sun, 15 Apr 2018 05:34:48 +0200
-Subject: [PATCH 34/42] Fix clocks following rebase
+Subject: [PATCH 34/44] Fix clocks following rebase
 
 ---
  drivers/clk/meson/gxbb.c | 77 +++++++++++++++++++++++++-----------------------

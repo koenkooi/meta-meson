@@ -1,7 +1,7 @@
-From 1f57b66ccff1441b7299fd4a583d243ecfce2cca Mon Sep 17 00:00:00 2001
+From 74ac90a1aefe96a6b9e658d0aefd23f2eeed6596 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <raptorteak@gmail.com>
 Date: Thu, 15 Mar 2018 13:32:33 +0100
-Subject: [PATCH 01/42] clock: meson8b: add clocks necessary for VDEC1
+Subject: [PATCH 01/44] clock: meson8b: add clocks necessary for VDEC1
 
 ---
  drivers/clk/meson/meson8b.c              | 55 ++++++++++++++++++++++++++++++++

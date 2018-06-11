@@ -1,7 +1,7 @@
-From 54af000af2abdbea0762e6be64cca21bea717dcd Mon Sep 17 00:00:00 2001
+From 5aa05e0e442d2c6fb8602496e559fb3ee70e64e1 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <raptorteak@gmail.com>
 Date: Thu, 15 Mar 2018 13:47:47 +0100
-Subject: [PATCH 03/42] media: meson: add V4L2 M2M video decoder
+Subject: [PATCH 03/44] media: meson: add V4L2 M2M video decoder
 
 Very broken. Very WiP.
 ---

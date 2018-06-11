@@ -1,7 +1,7 @@
-From afb2a66987c33d1ffda9e90b547cad031008354e Mon Sep 17 00:00:00 2001
+From b5b42bb0c650050781a8810e6168ed95bd7de90f Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Fri, 30 Mar 2018 18:24:07 +0200
-Subject: [PATCH 12/42] meson: vdec: several fixups for gstreamer compat
+Subject: [PATCH 12/44] meson: vdec: several fixups for gstreamer compat
 
 The biggest 2 fixes are supporting more than one input buffer
 and correctly filling the bytesused buffer property.

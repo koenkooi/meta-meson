@@ -1,7 +1,7 @@
-From bae4d5e00ee19c93e43bb15377e9d1116418d312 Mon Sep 17 00:00:00 2001
+From d7e9997ae947f0007af6a946be901e49b99e059d Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Thu, 5 Apr 2018 22:13:53 +0200
-Subject: [PATCH 23/42] dts: Actually set VDEC_1 clock to 666MHz
+Subject: [PATCH 23/44] dts: Actually set VDEC_1 clock to 666MHz
 
 Thanks narmstrong for the tip.
 Should allow to test H.264 decoding at full speed.
@@ -13,10 +13,10 @@ and the pwrc itself is going away in the future..
  1 file changed, 6 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-index 019e2d8..c6b9a04 100644
+index 0d414f9..1619b70 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-@@ -814,8 +814,10 @@
+@@ -790,8 +790,10 @@
  	clocks = <&clkc CLKID_VPU_INTR>, <&clkc CLKID_DOS_PARSER>, <&clkc CLKID_VDEC_1>, <&clkc CLKID_VDEC_HEVC>;
  	clock-names = "vpu_intr", "dos_parser", "vdec_1", "vdec_hevc";
  

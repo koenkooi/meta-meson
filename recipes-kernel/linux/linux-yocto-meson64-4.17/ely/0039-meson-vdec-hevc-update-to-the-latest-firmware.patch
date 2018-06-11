@@ -1,7 +1,7 @@
-From 475573291dff4246c33f82559825fe58b7f156eb Mon Sep 17 00:00:00 2001
+From a485e7426a07d1298a344a12de4e44afa21737fd Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Tue, 24 Apr 2018 15:05:07 +0200
-Subject: [PATCH 39/42] meson: vdec: hevc: update to the latest firmware
+Subject: [PATCH 39/44] meson: vdec: hevc: update to the latest firmware
 
 Update to the firmware available in OpenLinux buildroot 20180316
 ---
