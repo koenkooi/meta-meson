@@ -1,5 +1,5 @@
 SUMMARY = "Firmware for amlogic vdec"
-LICENSE = "Propietary"
+LICENSE = "GPLv2"
 
 
 SRC_URI = "git://github.com/chewitt/meson-firmware.git;protocol=https"
