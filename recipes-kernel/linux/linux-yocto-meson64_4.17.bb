@@ -71,6 +71,41 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
            file://v4l2/0045-meson-vdec-MJPEG-EOS-signaling.patch \
            file://v4l2/0046-meson-vdec-add-mjpeg-firmware-should-be-in-meson-gx-.patch \
            \
+           file://lima/0001-ARM-dts-add-gpu-node-to-exynos4.patch \
+           file://lima/0002-dt-bindings-add-switch-delay-property-for-mali-utgar.patch \
+           file://lima/0003-arm64-dts-add-switch-delay-for-meson-mali.patch \
+           file://lima/0004-arm64-dts-add-switch-delay-for-meson-mali.patch \
+           file://lima/0005-drm-lima-add-lima-uapi-header.patch \
+           file://lima/0006-drm-lima-add-mali-4xx-GPU-hardware-regs.patch \
+           file://lima/0007-drm-lima-add-lima-core-driver.patch \
+           file://lima/0008-drm-lima-add-GPU-device-functions.patch \
+           file://lima/0009-drm-lima-add-PMU-related-functions.patch \
+           file://lima/0010-drm-lima-add-L2-cache-functions.patch \
+           file://lima/0011-drm-lima-add-GP-related-functions.patch \
+           file://lima/0012-drm-lima-add-PP-related-functions.patch \
+           file://lima/0013-drm-lima-add-MMU-related-functions.patch \
+           file://lima/0014-drm-lima-add-BCAST-related-function.patch \
+           file://lima/0015-drm-lima-add-DLBU-related-functions.patch \
+           file://lima/0016-drm-lima-add-GPU-virtual-memory-space-handing.patch \
+           file://lima/0017-drm-lima-add-TTM-subsystem-functions.patch \
+           file://lima/0018-drm-lima-add-buffer-object-functions.patch \
+           file://lima/0019-drm-lima-add-GEM-related-functions.patch \
+           file://lima/0020-drm-lima-add-GEM-Prime-related-functions.patch \
+           file://lima/0021-drm-lima-add-GPU-schedule-using-DRM_SCHED.patch \
+           file://lima/0022-drm-lima-add-context-related-functions.patch \
+           file://lima/0023-drm-lima-add-makefile-and-kconfig.patch \
+           file://lima/0024-drm-lima-use-SPDX-identifiers-and-change-copyright.patch \
+           file://lima/0025-drm-lima-lima_reg.h-use-BIT.patch \
+           file://lima/0026-drm-lima-add-IRQF_SHARED-for-GP-irq.patch \
+           file://lima/0027-drm-lima-Kconfig-only-depend-on-ARM-or-ARM64.patch \
+           file://lima/0028-drm-lima-add-comments-for-lima_reg.h.patch \
+           file://lima/0029-drm-lima-wait-bo-fence-before-bo-close.patch \
+           file://lima/0030-drm-lima-refine-lima_gem_sync_bo.patch \
+           file://lima/0031-drm-lima-vm-will-be-freed-when-lima_sched_free_job.patch \
+           file://lima/0032-drm-lima-vm-alloc-buffer-with-multi-page-table.patch \
+           file://lima/0033-drm-lima-clear-vm-page-table-when-alloc.patch \
+           file://lima/0034-drm-lima-update-SPDX-header-to-match-kernel-rules.patch \
+           \
            file://defconfig \
            "
 
