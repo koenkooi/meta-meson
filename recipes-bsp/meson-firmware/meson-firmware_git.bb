@@ -3,7 +3,7 @@ LICENSE = "Propietary"
 
 
 SRC_URI = "git://github.com/chewitt/meson-firmware.git;protocol=https"
-SRCREV = "b9b622ea75d1df9c559f1d1e7a2d24a09657aec6"
+SRCREV = "0db131d984855b377d9cf61ff2dd1b4c6c2e9dca"
 
 S = "${WORKDIR}/git"
 
