@@ -71,6 +71,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
            file://v4l2/0044-meson-vdec-hevc-Fix-crash-when-no-output-buffers-are.patch \
            file://v4l2/0045-meson-vdec-MJPEG-EOS-signaling.patch \
            file://v4l2/0046-meson-vdec-add-mjpeg-firmware-should-be-in-meson-gx-.patch \
+           file://v4l2/0047-meson-vdec-handle-DOS-clock-gate.patch \
            \
            file://lima/0001-ARM-dts-add-gpu-node-to-exynos4.patch \
            file://lima/0002-dt-bindings-add-switch-delay-property-for-mali-utgar.patch \
