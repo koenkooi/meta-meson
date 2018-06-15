@@ -1,7 +1,7 @@
 From d7e9997ae947f0007af6a946be901e49b99e059d Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Thu, 5 Apr 2018 22:13:53 +0200
-Subject: [PATCH 23/46] dts: Actually set VDEC_1 clock to 666MHz
+Subject: [PATCH 23/48] dts: Actually set VDEC_1 clock to 666MHz
 
 Thanks narmstrong for the tip.
 Should allow to test H.264 decoding at full speed.

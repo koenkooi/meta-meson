@@ -1,7 +1,7 @@
 From d33e2e33492fdf200d85ea2409956b159bc3df6d Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Sun, 1 Apr 2018 18:52:19 +0200
-Subject: [PATCH 16/46] meson: vdec: Actually output NV12M
+Subject: [PATCH 16/48] meson: vdec: Actually output NV12M
 
 All credits go to Nicolas Dufresne.
 

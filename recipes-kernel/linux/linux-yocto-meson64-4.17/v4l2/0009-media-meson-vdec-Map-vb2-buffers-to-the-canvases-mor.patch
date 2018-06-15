@@ -1,7 +1,7 @@
 From 2d8ed8a9a576e8dc962c2711d38480e626f8061d Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <raptorteak@gmail.com>
 Date: Tue, 27 Mar 2018 23:40:19 +0200
-Subject: [PATCH 09/46] media: meson-vdec: Map vb2 buffers to the canvases [ +
+Subject: [PATCH 09/48] media: meson-vdec: Map vb2 buffers to the canvases [ +
  more.. ]
 
 * The VB2 buffers are now directly mapped to the canvases.

@@ -1,7 +1,7 @@
 From 0ae1b2b7f964b765046eff092302bd2e3ba2e8d5 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Fri, 8 Jun 2018 04:40:53 +0200
-Subject: [PATCH 45/46] meson: vdec: MJPEG + EOS signaling
+Subject: [PATCH 45/48] meson: vdec: MJPEG + EOS signaling
 
 * MJPEG decoding (untested!)
 * v4l2 CMD_STOP and AML specific EndOfStream signaling

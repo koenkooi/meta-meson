@@ -1,7 +1,7 @@
 From 5899b614181da6c0e9ec4a7fca1ecf7c729a2d9c Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Tue, 24 Apr 2018 15:25:47 +0200
-Subject: [PATCH 40/46] meson: vdec: hevc: enable mcrcc
+Subject: [PATCH 40/48] meson: vdec: hevc: enable mcrcc
 
 I'm not entirely sure, but in this context mcrcc seems to refer to
 motion compensation reference cache controller.

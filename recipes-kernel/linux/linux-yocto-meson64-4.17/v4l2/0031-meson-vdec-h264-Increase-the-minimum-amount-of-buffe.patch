@@ -1,7 +1,7 @@
 From c498b8075d9f3417a65ecc5bceb7dcaf602059d2 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Wed, 11 Apr 2018 00:19:40 +0200
-Subject: [PATCH 31/46] meson: vdec: h264: Increase the minimum amount of
+Subject: [PATCH 31/48] meson: vdec: h264: Increase the minimum amount of
  buffers to 16
 
 It's the only way to be bulletproof for bitstreams that have

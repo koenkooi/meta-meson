@@ -1,7 +1,7 @@
 From cffb61329b32e8b567d42518431f620f74e7e4ec Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <raptorteak@gmail.com>
 Date: Thu, 15 Mar 2018 13:39:41 +0100
-Subject: [PATCH 02/46] soc: meson: add power controller for vdec
+Subject: [PATCH 02/48] soc: meson: add power controller for vdec
 
 ---
  drivers/soc/amlogic/Makefile          |   1 +

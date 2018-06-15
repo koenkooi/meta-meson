@@ -1,7 +1,7 @@
 From 9dd1f54ed517d32728fb9d070b4368eae13c1cbe Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Sun, 1 Apr 2018 15:16:27 +0200
-Subject: [PATCH 14/46] meson: vdec: Add forgotten H.264 ref MV alloc
+Subject: [PATCH 14/48] meson: vdec: Add forgotten H.264 ref MV alloc
 
 Hack in a GFP_ATOMIC alloc for the references buffer.
 Most likely will have to make those IRQs threaded anyway to get rid

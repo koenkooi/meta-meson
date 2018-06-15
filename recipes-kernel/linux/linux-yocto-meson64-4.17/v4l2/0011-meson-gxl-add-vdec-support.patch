@@ -1,7 +1,7 @@
 From f9970f02db625fde49f78128d5331289c3dc12c5 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Thu, 29 Mar 2018 21:02:32 +0200
-Subject: [PATCH 11/46] meson: gxl: add vdec support
+Subject: [PATCH 11/48] meson: gxl: add vdec support
 
 This adds the various DTS/clock/firmware pieces to run the vdec
 on GXL (tested on S905X).

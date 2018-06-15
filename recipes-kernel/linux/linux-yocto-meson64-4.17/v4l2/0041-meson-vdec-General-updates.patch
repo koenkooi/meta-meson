@@ -1,7 +1,7 @@
 From ccc78218c7603a819ac245c4ad01b42a1307a3be Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Thu, 26 Apr 2018 00:03:35 +0200
-Subject: [PATCH 41/46] meson: vdec: General updates
+Subject: [PATCH 41/48] meson: vdec: General updates
 
 This commits removes the vdec pwrc and instead manages
 power/clk in the driver directly. This allows having

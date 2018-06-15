@@ -1,7 +1,7 @@
 From f17212aed31bceadbf615ca4067e73a80b4632de Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Fri, 13 Apr 2018 06:29:07 +0200
-Subject: [PATCH 32/46] dts: meson-gxbb: add vdec entries
+Subject: [PATCH 32/48] dts: meson-gxbb: add vdec entries
 
 ---
  arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi | 16 ++++++++++++++++

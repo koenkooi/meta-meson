@@ -1,7 +1,7 @@
 From e44731d2f0ad1c34a6e23b9f5d346629529f8648 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Fri, 20 Apr 2018 07:53:25 +0200
-Subject: [PATCH 37/46] meson: vdec: per-soc compatible list
+Subject: [PATCH 37/48] meson: vdec: per-soc compatible list
 
 This adds the different "compatible" entries for gxbb, gxl, gxm.
 

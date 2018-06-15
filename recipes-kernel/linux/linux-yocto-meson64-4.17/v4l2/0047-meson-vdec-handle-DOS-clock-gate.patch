@@ -1,7 +1,7 @@
 From 0b02eeb2a9cb795c4c2ff77ab6ffdba7132027ed Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Wed, 13 Jun 2018 10:56:34 +0200
-Subject: [PATCH 47/47] meson: vdec: handle DOS clock gate
+Subject: [PATCH 47/48] meson: vdec: handle DOS clock gate
 
 Turns out it's not always enabled by default.
 

@@ -1,7 +1,7 @@
 From f05b3f8226d1cdc02c980a1efbc4761075ee119f Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <raptorteak@gmail.com>
 Date: Wed, 28 Mar 2018 17:04:25 +0200
-Subject: [PATCH 10/46] media: meson-vdec: the H.264 vdec is now usable - on
+Subject: [PATCH 10/48] media: meson-vdec: the H.264 vdec is now usable - on
  s805/odroid-c1
 
 * Finally fixed the annoying poweron/poweroff that would crap out 80% of the time.

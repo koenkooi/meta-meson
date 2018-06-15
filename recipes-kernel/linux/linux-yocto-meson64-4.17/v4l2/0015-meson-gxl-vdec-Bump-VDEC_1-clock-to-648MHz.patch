@@ -1,7 +1,7 @@
 From 404fcb3e76d66c5f1efa70d7c8b2314de252d4c3 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Sun, 1 Apr 2018 17:11:59 +0200
-Subject: [PATCH 15/46] meson: gxl: vdec: Bump VDEC_1 clock to 648MHz
+Subject: [PATCH 15/48] meson: gxl: vdec: Bump VDEC_1 clock to 648MHz
 
 Seems to be the max. allowed.
 

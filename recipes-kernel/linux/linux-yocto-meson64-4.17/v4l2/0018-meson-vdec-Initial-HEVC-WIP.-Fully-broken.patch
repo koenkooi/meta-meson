@@ -1,7 +1,7 @@
 From 714e0678c0db0f83063479e54a5586d826047a42 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Tue, 3 Apr 2018 15:04:40 +0200
-Subject: [PATCH 18/46] meson: vdec: Initial HEVC WIP. Fully broken.
+Subject: [PATCH 18/48] meson: vdec: Initial HEVC WIP. Fully broken.
 
 The code changes were getting big so push the initial WIP.
 Everything is still configured so that you can use H.264.
