@@ -109,6 +109,8 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
            file://lima/0033-drm-lima-clear-vm-page-table-when-alloc.patch \
            file://lima/0034-drm-lima-update-SPDX-header-to-match-kernel-rules.patch \
            \
+           file://hacks/0001-ARM-DTS-libretech-cc-disable-CVBS-connector.patch \
+           \
            file://defconfig \
            "
 
