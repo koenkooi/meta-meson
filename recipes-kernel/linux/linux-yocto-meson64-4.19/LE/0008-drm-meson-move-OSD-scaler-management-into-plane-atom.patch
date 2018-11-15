@@ -1,7 +1,7 @@
-From 838cdc6582e3ddf07179bf93abeddd696a02bff6 Mon Sep 17 00:00:00 2001
+From 342c784813dc7fcd7d3c50aac743ecc5c6368ef1 Mon Sep 17 00:00:00 2001
 From: Neil Armstrong <narmstrong@baylibre.com>
 Date: Mon, 29 Oct 2018 17:04:05 +0100
-Subject: [PATCH 08/52] drm/meson: move OSD scaler management into plane atomic
+Subject: [PATCH 1/2] drm/meson: move OSD scaler management into plane atomic
  update
 
 In preparation to support the Primary Plane scaling, move the basic

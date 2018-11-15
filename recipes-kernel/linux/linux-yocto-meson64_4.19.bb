@@ -4,8 +4,8 @@
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
-SRCREV_meson = "07a03b97b9ce2a6430344386eeab9b16283b893f"
-LINUX_VERSION = "4.19.1"
+SRCREV_meson = "7950eb316adf792283cac5743dfe5a11e74833dc"
+LINUX_VERSION = "4.19.2"
 	
 # Linux stable tree
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=linux-4.19.y;name=meson \
@@ -54,25 +54,50 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
              file://lima/0041-drm-lima-Fix-lima-cache-creation.patch \
              file://lima/0001-lima-PR20.patch \
              \
-             file://LE/0001-dt-bindings-soc-amlogic-add-meson-canvas-documentati.patch \
-             file://LE/0002-soc-amlogic-add-meson-canvas-driver.patch \
-             file://LE/0003-ARM64-dts-meson-gx-add-dmcbus-and-canvas-nodes.patch \
-             file://LE/0004-dt-bindings-display-amlogic-meson-vpu-Add-optional-c.patch \
-             file://LE/0005-drm-meson-Use-optional-canvas-provider.patch \
-             file://LE/0006-arm64-dts-meson-gx-Add-canvas-provider-node-to-the-v.patch \
-             file://LE/0007-drm-meson-Support-Overlay-plane-for-video-rendering.patch \
+             file://overlay/0001-dt-bindings-soc-amlogic-add-meson-canvas-documentati.patch \
+             file://overlay/0002-soc-amlogic-add-meson-canvas-driver.patch \
+             file://overlay/0003-ARM64-dts-meson-gx-add-dmcbus-and-canvas-nodes.patch \
+             file://overlay/0004-dt-bindings-display-amlogic-meson-vpu-Add-optional-c.patch \
+             file://overlay/0005-drm-meson-Use-optional-canvas-provider.patch \
+             file://overlay/0006-arm64-dts-meson-gx-Add-canvas-provider-node-to-the-v.patch \
+             file://overlay/0007-soc-amlogic-meson-gx-pwrc-vpu-fix-memory-power-up-do.patch \
+             file://overlay/0008-drm-meson-Support-Overlay-plane-for-video-rendering.patch \
+             \
              file://LE/0008-drm-meson-move-OSD-scaler-management-into-plane-atom.patch \
              file://LE/0009-drm-meson-Add-primary-plane-scaling.patch \
              file://LE/0010-drm-meson-Add-support-for-VIC-alternate-timings.patch \
              file://LE/0011-drm-meson-fix-max-height-width.patch \
-             file://LE/0012-ARM64-defconfig-enable-CEC-support.patch \
+             \
+             file://v4l2/0005-dt-bindings-media-add-Amlogic-Video-Decoder-Bindings.patch \
+             file://v4l2/0006-media-meson-add-v4l2-m2m-video-decoder-driver.patch \
+             file://v4l2/0007-MAINTAINERS-Add-meson-video-decoder.patch \
+             file://v4l2/0008-arm64-dts-meson-gx-add-vdec-entry.patch \
+             file://v4l2/0009-arm64-dts-meson-add-vdec-entries.patch \
+             file://v4l2/0010-meson-vdec-introduce-controls-and-V4L2_CID_MIN_BUFFE.patch \
+             file://v4l2/0011-media-videodev2-add-V4L2_FMT_FLAG_NO_SOURCE_CHANGE.patch \
+             file://v4l2/0012-meson-vdec-allow-subscribing-to-V4L2_EVENT_SOURCE_CH.patch \
+             file://v4l2/0013-media-meson-vdec-add-H.264-decoding-support.patch \
+             file://v4l2/0014-media-meson-vdec-add-MPEG4-decoding-support.patch \
+             file://v4l2/0015-media-meson-vdec-add-MJPEG-decoding-support.patch \
+             file://v4l2/0016-media-videodev2.h-Add-Amlogic-compressed-format.patch \
+             file://v4l2/0017-media-meson-vdec-add-support-for-V4L2_PIX_FMT_AM21C.patch \
+             file://v4l2/0018-media-meson-vdec-add-HEVC-decoding-support.patch \
+             file://v4l2/0019-meson-vdec-more-debug-information-on-src-change.patch \
+             file://v4l2/0020-meson-vdec-hevc-fix-conformance-window.patch \
+             file://v4l2/0021-meson-vdec-hevc-simplify-integer-ceiling.patch \
+             file://v4l2/0022-meson-vdec-hevc-various-80-line-fixes.patch \
+             file://v4l2/0023-meson-vdec-hevc-fix-wrong-sao_up-buf-size.patch \
+             file://v4l2/0024-meson-vdec-fix-coccinelle-warnings.patch \
+             file://v4l2/0025-meson-vdec-make-amvdec_dst_buf_done_offset-public.patch \
+             file://v4l2/0026-meson-vdec-hevc-support-offset-based-frame-DONE-ing.patch \
+             file://v4l2/0027-meson-vdec-don-t-allow-dropping-timestamps-with-hevc.patch \
+             \
              file://LE/0013-ASoC-meson-add-meson-audio-core-driver.patch \
              file://LE/0014-ASoC-meson-add-register-definitions.patch \
              file://LE/0015-ASoC-meson-add-aiu-i2s-dma-support.patch \
              file://LE/0016-ASoC-meson-add-initial-i2s-dai-support.patch \
              file://LE/0017-ASoC-meson-add-aiu-spdif-dma-support.patch \
              file://LE/0018-ASoC-meson-add-initial-spdif-dai-support.patch \
-             file://LE/0019-ARM64-defconfig-enable-audio-support-for-meson-SoCs-.patch \
              file://LE/0020-ARM64-dts-meson-gx-add-audio-controller-nodes.patch \
              file://LE/0021-snd-meson-activate-HDMI-audio-path.patch \
              file://LE/0022-drm-meson-select-dw-hdmi-i2s-audio-for-meson-hdmi.patch \
@@ -80,25 +105,6 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
              file://LE/0024-ARM64-dts-meson-activate-hdmi-audio-HDMI-enabled-boa.patch \
              file://LE/0025-drm-bridge-dw-hdmi-Use-AUTO-CTS-setup-mode-when-non-.patch \
              file://LE/0026-drm-meson-Call-drm_crtc_vblank_on-drm_crtc_vblank_of.patch \
-             file://LE/0027-dt-bindings-media-add-Amlogic-Video-Decoder-Bindings.patch \
-             file://LE/0028-media-meson-add-v4l2-m2m-video-decoder-driver.patch \
-             file://LE/0029-MAINTAINERS-Add-meson-video-decoder.patch \
-             file://LE/0030-arm64-dts-meson-gx-add-vdec-entry.patch \
-             file://LE/0031-ARM64-dts-meson-add-vdec-entries.patch \
-             file://LE/0032-meson-vdec-introduce-controls-and-V4L2_CID_MIN_BUFFE.patch \
-             file://LE/0033-media-videodev2-add-V4L2_FMT_FLAG_NO_SOURCE_CHANGE.patch \
-             file://LE/0034-meson-vdec-allow-subscribing-to-V4L2_EVENT_SOURCE_CH.patch \
-             file://LE/0035-media-meson-vdec-add-H.264-decoding-support.patch \
-             file://LE/0036-media-meson-vdec-add-MPEG4-decoding-support.patch \
-             file://LE/0037-media-meson-vdec-add-MJPEG-decoding-support.patch \
-             file://LE/0038-media-videodev2.h-Add-Amlogic-compressed-format.patch \
-             file://LE/0039-media-meson-vdec-add-support-for-V4L2_PIX_FMT_AM21C.patch \
-             file://LE/0040-media-meson-vdec-add-HEVC-decoding-support.patch \
-             file://LE/0041-meson-vdec-more-debug-information-on-src-change.patch \
-             file://LE/0042-meson-vdec-hevc-fix-conformance-window.patch \
-             file://LE/0043-meson-vdec-hevc-simplify-integer-ceiling.patch \
-             file://LE/0044-meson-vdec-hevc-various-80-line-fixes.patch \
-             file://LE/0045-meson-vdec-hevc-fix-wrong-sao_up-buf-size.patch \
              file://LE/0046-ASoC-hdmi-codec-fix-channel-allocation.patch \
              file://LE/0047-drm-dw-hdmi-i2s-add-.get_eld-callback-for-ALSA-SoC.patch \
              file://LE/0048-drm-dw-hdmi-i2s-add-multi-channel-lpcm-support.patch \

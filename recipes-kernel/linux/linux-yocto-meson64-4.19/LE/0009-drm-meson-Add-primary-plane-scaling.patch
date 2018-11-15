@@ -1,7 +1,7 @@
-From 2661d2f30184b4f7a3f52774a1e109df6642f2d8 Mon Sep 17 00:00:00 2001
+From ea399830828505c7912798159c80e678b0095ca1 Mon Sep 17 00:00:00 2001
 From: Neil Armstrong <narmstrong@baylibre.com>
 Date: Tue, 30 Oct 2018 14:29:10 +0100
-Subject: [PATCH 09/52] drm/meson: Add primary plane scaling
+Subject: [PATCH 2/2] drm/meson: Add primary plane scaling
 
 This patch adds support for the Primary Plane scaling.
 
