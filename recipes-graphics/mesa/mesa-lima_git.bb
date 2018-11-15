@@ -58,10 +58,13 @@ SRC_URI = "git://gitlab.freedesktop.org/mesa/mesa.git;protocol=https;branch=18.2
            file://lima/0047-lima-fix-tiling-untiling-partial-textures.patch \
            file://lima/0048-lima-fix-multi-triangle-index-draw-hang.patch \
            file://lima/0049-lima-gp-Fix-fnot.patch \
+           file://lima/0050-lima-fix-src_x-not-initialized.patch \
+           file://lima/0051-meson-add-lima-related-build.patch \
+           file://lima/0052-lima-support-INT-index-draw.patch \
            "
 
-PV = "18.2.4+git${SRCPV}"
-SRCREV = "82faa8067a8872c877eb21122130cf5bdc86657e"
+PV = "18.2.5+git${SRCPV}"
+SRCREV = "f34bddc325c414cb8ee21666bd307512577efdef"
 
 S = "${WORKDIR}/git"
 

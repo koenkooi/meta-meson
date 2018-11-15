@@ -1,7 +1,7 @@
 From 5344d6bc289b50fce652d90d1832163d69756c46 Mon Sep 17 00:00:00 2001
 From: Qiang Yu <yuq825@gmail.com>
 Date: Sun, 5 Aug 2018 10:36:14 +0800
-Subject: [PATCH 20/49] st/dri2: use dynamic alloc extensions
+Subject: [PATCH 20/52] st/dri2: use dynamic alloc extensions
 
 When optional extension increases, use static extension
 is not good. This is for the following adding another
