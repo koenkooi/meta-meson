@@ -1,7 +1,7 @@
-From 341b37d5e7911171e1b93cbb93c0005cbe7da805 Mon Sep 17 00:00:00 2001
+From a57fbd2a2a3a70277e2fa5deebae3b84a10855d9 Mon Sep 17 00:00:00 2001
 From: Andreas Baierl <ichgehimkreisrum.de>
 Date: Wed, 24 Oct 2018 10:00:29 +0200
-Subject: [PATCH 41/47] lima/gpir: Rename gpir_lower_funcs
+Subject: [PATCH 41/49] lima/gpir: Rename gpir_lower_funcs
 
 In preparation for future lower functions we make clear, that the existing
 ones are executed after gpir_reduce_reg_pressure_prog.

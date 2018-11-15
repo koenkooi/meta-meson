@@ -1,7 +1,7 @@
-From 9c43d4caabd4e02406c652c9531b31231841702e Mon Sep 17 00:00:00 2001
+From 481ffda3f76b20a65bc9e5676df305eebe7c6fbf Mon Sep 17 00:00:00 2001
 From: Qiang Yu <yuq825@gmail.com>
 Date: Tue, 19 Jun 2018 14:39:28 +0800
-Subject: [PATCH 05/47] drm-uapi/forcc: add ARM tiled modifier format
+Subject: [PATCH 05/49] drm-uapi/forcc: add ARM tiled modifier format
 
 Signed-off-by: Qiang Yu <yuq825@gmail.com>
 ---

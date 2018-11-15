@@ -1,7 +1,7 @@
-From e70a13f2651b8a41e952177783385ee3fcd5f021 Mon Sep 17 00:00:00 2001
+From 78b52f14ef4d64957514564e03437ff428e02423 Mon Sep 17 00:00:00 2001
 From: Qiang Yu <yuq825@gmail.com>
 Date: Sat, 1 Sep 2018 19:46:25 +0800
-Subject: [PATCH 29/47] lima: set damage with tile buffer region
+Subject: [PATCH 29/49] lima: set damage with tile buffer region
 
 Signed-off-by: Qiang Yu <yuq825@gmail.com>
 ---

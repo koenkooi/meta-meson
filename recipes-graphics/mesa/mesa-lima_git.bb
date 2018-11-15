@@ -55,12 +55,13 @@ SRC_URI = "git://gitlab.freedesktop.org/mesa/mesa.git;protocol=https;branch=18.2
            file://lima/0044-lima-gp-Add-a-disassembler.patch \
            file://lima/0045-lima-pp-Fix-some-whitespace-issues-in-disassembler.patch \
            file://lima/0046-lima-pp-Fix-disassembler-shift-issue.patch \
-           file://lima/0047-lima-fix-multi-triangle-index-draw-hang.patch \
-           file://lima/0001-lima-fix-tiling-untiling-partial-textures.patch \
+           file://lima/0047-lima-fix-tiling-untiling-partial-textures.patch \
+           file://lima/0048-lima-fix-multi-triangle-index-draw-hang.patch \
+           file://lima/0049-lima-gp-Fix-fnot.patch \
            "
 
 PV = "18.2.4+git${SRCPV}"
-SRCREV = "624e384ea86afea737f9d3b952a9c3edbecd3950"
+SRCREV = "82faa8067a8872c877eb21122130cf5bdc86657e"
 
 S = "${WORKDIR}/git"
 
