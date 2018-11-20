@@ -1,7 +1,8 @@
-From 538287f038c992b70c7ed2c5b675954e1f27cb97 Mon Sep 17 00:00:00 2001
+From 5f78ba8bcaaf175263f56d693765faa4c01bad38 Mon Sep 17 00:00:00 2001
 From: Neil Armstrong <narmstrong@baylibre.com>
 Date: Mon, 29 Oct 2018 15:12:35 +0100
-Subject: [PATCH 7/8] soc: amlogic: meson-gx-pwrc-vpu: fix memory power up/down
+Subject: [PATCH 01/24] soc: amlogic: meson-gx-pwrc-vpu: fix memory power
+ up/down
 
 ---
  drivers/soc/amlogic/meson-gx-pwrc-vpu.c | 8 ++++----

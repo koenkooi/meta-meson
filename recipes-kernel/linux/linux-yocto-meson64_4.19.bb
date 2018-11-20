@@ -54,18 +54,31 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
              file://lima/0041-drm-lima-Fix-lima-cache-creation.patch \
              file://lima/0001-lima-PR20.patch \
              \
-             file://overlay/0001-dt-bindings-soc-amlogic-add-meson-canvas-documentati.patch \
-             file://overlay/0002-soc-amlogic-add-meson-canvas-driver.patch \
-             file://overlay/0003-ARM64-dts-meson-gx-add-dmcbus-and-canvas-nodes.patch \
-             file://overlay/0004-dt-bindings-display-amlogic-meson-vpu-Add-optional-c.patch \
+             file://overlay/0001-soc-amlogic-meson-gx-pwrc-vpu-fix-memory-power-up-do.patch \
+             file://overlay/0002-dt-bindings-soc-amlogic-add-meson-canvas-documentati.patch \
+             file://overlay/0003-soc-amlogic-add-meson-canvas-driver.patch \
+             file://overlay/0004-ARM64-dts-meson-gx-add-dmcbus-and-canvas-nodes.patch \
              file://overlay/0005-drm-meson-Use-optional-canvas-provider.patch \
              file://overlay/0006-arm64-dts-meson-gx-Add-canvas-provider-node-to-the-v.patch \
-             file://overlay/0007-soc-amlogic-meson-gx-pwrc-vpu-fix-memory-power-up-do.patch \
-             file://overlay/0008-drm-meson-Support-Overlay-plane-for-video-rendering.patch \
+             file://overlay/0007-drm-meson-Support-Overlay-plane-for-video-rendering.patch \
+             file://overlay/0008-drm-meson-move-OSD-scaler-management-into-plane-atom.patch \
+             file://overlay/0009-drm-meson-Add-primary-plane-scaling.patch \
+             file://overlay/0010-drm-meson-Add-HDMI-1.4-4k-modes.patch \
+             file://overlay/0011-drm-meson-Use-drm_fbdev_generic_setup.patch \
+             file://overlay/0012-fixup-drm-meson-Use-optional-canvas-provider.patch \
+             file://overlay/0013-drm-meson-Add-support-for-VIC-alternate-timings.patch \
+             file://overlay/0014-drm-meson-add-support-for-1080p25-mode.patch \
+             file://overlay/0015-drm-meson-Call-drm_crtc_vblank_on-drm_crtc_vblank_of.patch \
+             file://overlay/0016-drm-bridge-dw-hdmi-Add-SCDC-and-TMDS-Scrambling-supp.patch \
+             file://overlay/0017-drm-meson-add-HDMI-div40-TMDS-mode.patch \
+             file://overlay/0018-drm-meson-add-support-for-HDMI2.0-2160p-modes.patch \
+             file://overlay/0019-drm-bridge-dw-hdmi-add-support-for-YUV420-output.patch \
+             file://overlay/0020-drm-bridge-dw-hdmi-support-dynamically-get-input-out.patch \
+             file://overlay/0021-drm-bridge-dw-hdmi-allow-ycbcr420-modes-for-0x200a.patch \
+             file://overlay/0022-drm-meson-Add-YUV420-output-support.patch \
+             file://overlay/0023-drm-meson-Output-in-YUV444-is-sink-supports-it.patch \
+             file://overlay/0024-drm-meson-Add-implicit-fencing-support-for-primary-a.patch \
              \
-             file://LE/0008-drm-meson-move-OSD-scaler-management-into-plane-atom.patch \
-             file://LE/0009-drm-meson-Add-primary-plane-scaling.patch \
-             file://LE/0010-drm-meson-Add-support-for-VIC-alternate-timings.patch \
              file://LE/0011-drm-meson-fix-max-height-width.patch \
              \
              file://v4l2/0005-dt-bindings-media-add-Amlogic-Video-Decoder-Bindings.patch \

@@ -1,7 +1,8 @@
-From a710b6fa3393c3e912db1597ccec6c921e075c9b Mon Sep 17 00:00:00 2001
+From d4cc5f817858f929fb19ba4aab9f27103faf644b Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <mjourdan@baylibre.com>
 Date: Mon, 15 Oct 2018 14:38:24 +0200
-Subject: [PATCH 6/8] arm64: dts: meson-gx: Add canvas provider node to the vpu
+Subject: [PATCH 06/24] arm64: dts: meson-gx: Add canvas provider node to the
+ vpu
 
 Allows the vpu driver to optionally use a canvas provider node.
 

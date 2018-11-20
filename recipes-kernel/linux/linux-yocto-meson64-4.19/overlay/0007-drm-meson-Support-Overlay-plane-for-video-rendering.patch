@@ -1,12 +1,28 @@
-From 15a52ff7f877e0a7e1709ab0b195654174222b5b Mon Sep 17 00:00:00 2001
+From aa341d3b4351496f7ac8baaea9be13dc1858e3b4 Mon Sep 17 00:00:00 2001
 From: Neil Armstrong <narmstrong@baylibre.com>
 Date: Thu, 2 Aug 2018 10:00:01 +0200
-Subject: [PATCH 8/8] drm/meson: Support Overlay plane for video rendering
+Subject: [PATCH 07/24] drm/meson: Support Overlay plane for video rendering
 
 The Amlogic Meson GX SoCs support an Overlay plane behind the primary
-plan for video rendering.
-This Overlay plane support various YUV layouts and a non-alpha RGB32
-layout.
+plane for video rendering.
+
+This Overlay plane support various YUV layouts :
+- YUYV
+- NV12 / NV21
+- YUV444 / 422 / 420 / 411 / 410
+
+The scaler supports a wide range of scaling ratios, but for simplicity,
+plane atomic check limits the scaling from x5 to /5 in vertical and
+horizontal scaling.
+
+The z-order is fixed and always behind the primary plane and cannot be changed.
+
+The scaling parameter algorithm was taken from the Amlogic vendor kernel
+code and rewritten to match the atomic universal plane requirements.
+
+The video rendering using this overlay plane support has been tested using
+the new Kodi DRM-KMS Prime rendering path along the in-review V4L2 Mem2Mem
+Hardware Video Decoder up to 3840x2160 NV12 frames on various display modes.
 ---
  drivers/gpu/drm/meson/Makefile          |   2 +-
  drivers/gpu/drm/meson/meson_canvas.c    |   7 +-
@@ -14,12 +30,12 @@ layout.
  drivers/gpu/drm/meson/meson_crtc.c      | 216 +++++++++++-
  drivers/gpu/drm/meson/meson_drv.c       |  29 +-
  drivers/gpu/drm/meson/meson_drv.h       |  52 +++
- drivers/gpu/drm/meson/meson_overlay.c   | 577 ++++++++++++++++++++++++++++++++
+ drivers/gpu/drm/meson/meson_overlay.c   | 586 ++++++++++++++++++++++++++++++++
  drivers/gpu/drm/meson/meson_overlay.h   |  14 +
  drivers/gpu/drm/meson/meson_registers.h |   3 +
  drivers/gpu/drm/meson/meson_viu.c       |  15 +
  drivers/gpu/drm/meson/meson_vpp.c       |  44 ++-
- 11 files changed, 962 insertions(+), 8 deletions(-)
+ 11 files changed, 971 insertions(+), 8 deletions(-)
  create mode 100644 drivers/gpu/drm/meson/meson_overlay.c
  create mode 100644 drivers/gpu/drm/meson/meson_overlay.h
 
@@ -503,10 +519,10 @@ index 728d0ca..c971557 100644
  	struct {
 diff --git a/drivers/gpu/drm/meson/meson_overlay.c b/drivers/gpu/drm/meson/meson_overlay.c
 new file mode 100644
-index 0000000..09b5402
+index 0000000..9aebc5e
 --- /dev/null
 +++ b/drivers/gpu/drm/meson/meson_overlay.c
-@@ -0,0 +1,577 @@
+@@ -0,0 +1,586 @@
 +// SPDX-License-Identifier: GPL-2.0+
 +/*
 + * Copyright (C) 2018 BayLibre, SAS
@@ -530,6 +546,7 @@ index 0000000..09b5402
 +#include "meson_overlay.h"
 +#include "meson_vpp.h"
 +#include "meson_viu.h"
++#include "meson_canvas.h"
 +#include "meson_registers.h"
 +
 +/* VD1_IF0_GEN_REG */
@@ -698,10 +715,6 @@ index 0000000..09b5402
 +	ratio_x = (w_in << 18) / video_width;
 +	ratio_y = (h_in << 18) / video_height;
 +
-+	/* Interlace output */
-+	if (interlace_mode)
-+		ratio_y <<= 1;
-+
 +	if (ratio_x * video_width < (w_in << 18))
 +		ratio_x++;
 +
@@ -739,6 +752,11 @@ index 0000000..09b5402
 +	vd_start_lines += crop_left;
 +	vd_end_lines += crop_left;
 +
++	/*
++	 * TOFIX: Input frames are handled and scaled like progressive frames,
++	 * proper handling of interlaced field input frames need to be figured
++	 * out using the proper framebuffer flags set by userspace.
++	 */
 +	if (interlace_mode) {
 +		start >>= 1;
 +		end >>= 1;
@@ -855,6 +873,13 @@ index 0000000..09b5402
 +	bool interlace_mode;
 +
 +	DRM_DEBUG_DRIVER("\n");
++
++	/* Fallback is canvas provider is not available */
++	if (!priv->canvas) {
++		priv->canvas_id_vd1_0 = MESON_CANVAS_ID_VD1_0;
++		priv->canvas_id_vd1_1 = MESON_CANVAS_ID_VD1_1;
++		priv->canvas_id_vd1_2 = MESON_CANVAS_ID_VD1_2;
++	}
 +
 +	interlace_mode = state->crtc->mode.flags & DRM_MODE_FLAG_INTERLACE;
 +

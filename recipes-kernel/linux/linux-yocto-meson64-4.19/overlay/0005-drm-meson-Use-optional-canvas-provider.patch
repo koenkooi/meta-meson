@@ -1,7 +1,7 @@
-From 809f72f8d8ceeea9a1711d4db50ad780ff5925b2 Mon Sep 17 00:00:00 2001
+From 8d2c6ce7bf795ac54fafa731c87aaefc3e0091c3 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <mjourdan@baylibre.com>
 Date: Mon, 15 Oct 2018 14:37:18 +0200
-Subject: [PATCH 5/8] drm/meson: Use optional canvas provider
+Subject: [PATCH 05/24] drm/meson: Use optional canvas provider
 
 This is the first step into converting the meson/drm driver to use
 the canvas module.

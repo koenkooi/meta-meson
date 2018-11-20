@@ -1,7 +1,8 @@
-From 635135333bb32988f9841aa59ceddb8a522433b8 Mon Sep 17 00:00:00 2001
+From bd1b608733e31b8e09fdc52173313e54dda39dbc Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <maxi.jourdan@wanadoo.fr>
 Date: Sat, 28 Jul 2018 22:40:27 +0200
-Subject: [PATCH 1/8] dt-bindings: soc: amlogic: add meson-canvas documentation
+Subject: [PATCH 02/24] dt-bindings: soc: amlogic: add meson-canvas
+ documentation
 
 DT bindings doc for amlogic,meson-canvas
 

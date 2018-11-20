@@ -1,0 +1,58 @@
+From 73f53aaf28f8da263ab51b88cd9849ede0fecaa8 Mon Sep 17 00:00:00 2001
+From: Koen Kooi <koen@dominion.thruhere.net>
+Date: Mon, 19 Nov 2018 11:02:39 +0100
+Subject: [PATCH 24/24] drm/meson: Add implicit fencing support for primary and
+ overlay planes
+
+Suggested by Qiang Yu <yuq825@gmail.com> to fix tearing artefacts in the
+Kodi GUI.
+
+Signed-off-by: Koen Kooi <koen@dominion.thruhere.net>
+---
+ drivers/gpu/drm/meson/meson_overlay.c | 2 ++
+ drivers/gpu/drm/meson/meson_plane.c   | 2 ++
+ 2 files changed, 4 insertions(+)
+
+diff --git a/drivers/gpu/drm/meson/meson_overlay.c b/drivers/gpu/drm/meson/meson_overlay.c
+index 9aebc5e..691a9fd 100644
+--- a/drivers/gpu/drm/meson/meson_overlay.c
++++ b/drivers/gpu/drm/meson/meson_overlay.c
+@@ -16,6 +16,7 @@
+ #include <drm/drm_plane_helper.h>
+ #include <drm/drm_gem_cma_helper.h>
+ #include <drm/drm_fb_cma_helper.h>
++#include <drm/drm_gem_framebuffer_helper.h>
+ #include <drm/drm_rect.h>
+ 
+ #include "meson_overlay.h"
+@@ -532,6 +533,7 @@ static const struct drm_plane_helper_funcs meson_overlay_helper_funcs = {
+ 	.atomic_check	= meson_overlay_atomic_check,
+ 	.atomic_disable	= meson_overlay_atomic_disable,
+ 	.atomic_update	= meson_overlay_atomic_update,
++	.prepare_fb	= drm_gem_fb_prepare_fb,
+ };
+ 
+ static const struct drm_plane_funcs meson_overlay_funcs = {
+diff --git a/drivers/gpu/drm/meson/meson_plane.c b/drivers/gpu/drm/meson/meson_plane.c
+index 12a47b4..8ee2cf9 100644
+--- a/drivers/gpu/drm/meson/meson_plane.c
++++ b/drivers/gpu/drm/meson/meson_plane.c
+@@ -32,6 +32,7 @@
+ #include <drm/drm_plane_helper.h>
+ #include <drm/drm_gem_cma_helper.h>
+ #include <drm/drm_fb_cma_helper.h>
++#include <drm/drm_gem_framebuffer_helper.h>
+ #include <drm/drm_rect.h>
+ 
+ #include "meson_plane.h"
+@@ -322,6 +323,7 @@ static const struct drm_plane_helper_funcs meson_plane_helper_funcs = {
+ 	.atomic_check	= meson_plane_atomic_check,
+ 	.atomic_disable	= meson_plane_atomic_disable,
+ 	.atomic_update	= meson_plane_atomic_update,
++	.prepare_fb	= drm_gem_fb_prepare_fb,
+ };
+ 
+ static const struct drm_plane_funcs meson_plane_funcs = {
+-- 
+2.0.1
+
