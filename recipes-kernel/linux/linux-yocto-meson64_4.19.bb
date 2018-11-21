@@ -78,6 +78,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
              file://overlay/0022-drm-meson-Add-YUV420-output-support.patch \
              file://overlay/0023-drm-meson-Output-in-YUV444-is-sink-supports-it.patch \
              file://overlay/0024-drm-meson-Add-implicit-fencing-support-for-primary-a.patch \
+             file://overlay/e9b2ea418f40bcef8e4444265fba658373b1ca42.patch \
              \
              file://LE/0011-drm-meson-fix-max-height-width.patch \
              \
