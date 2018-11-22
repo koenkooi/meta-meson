@@ -4,8 +4,8 @@
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
-SRCREV_meson = "7950eb316adf792283cac5743dfe5a11e74833dc"
-LINUX_VERSION = "4.19.2"
+SRCREV_meson = "73aa1c86c6ec67931abf0c6b96b6853578b07db5"
+LINUX_VERSION = "4.19.3"
 	
 # Linux stable tree
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=linux-4.19.y;name=meson \
@@ -127,6 +127,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
              file://LE/0051-drm-dw-hdmi-update-edid-on-hpd-event.patch \
              file://LE/0052-fix.patch \
              file://LE/0001-ARM64-DT-meson-gx-increase-CMA-size-for-UHD-decode.patch \
+             file://LE/linux-9999-clk-critical.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"
