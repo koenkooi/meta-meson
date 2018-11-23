@@ -1,30 +1,108 @@
-From e9b2ea418f40bcef8e4444265fba658373b1ca42 Mon Sep 17 00:00:00 2001
+From bef5cfbbb370211fd31fbc87f153d716ff9249df Mon Sep 17 00:00:00 2001
 From: Neil Armstrong <narmstrong@baylibre.com>
 Date: Wed, 28 Feb 2018 16:07:18 +0100
-Subject: [PATCH] drm/meson: Call drm_crtc_vblank_on / drm_crtc_vblank_off
+Subject: [PATCH] drm/meson: Fixes for drm_crtc_vblank_on/off support
 
-Make sure that the CRTC code will call the enable/disable_vblank hooks.
+Since Linux 4.17, calls to drm_crtc_vblank_on/off are mandatory, and we get
+a warning when ctrc is disabled :
+ driver forgot to call drm_crtc_vblank_off()
+
+But, the vsync IRQ was not totally disabled due the transient hardware
+state, thus adding proper IRQ masking from the HHI system control registers.
+
+The last change fixes a race condition when an HPD event occurs from
+the HDMI connector, printing a warning in the _atomic_bebin() calls
+when the CRTC is disabled, thus creating a warning in drm_vblank_put() :
+
+WARNING: CPU: 0 PID: 1185 at drivers/gpu/drm/meson/meson_crtc.c:157 meson_crtc_atomic_flush+0x78/0x80
+[...]
+Call trace:
+  meson_crtc_atomic_flush+0x78/0x80
+  drm_atomic_helper_commit_planes+0x140/0x218
+  drm_atomic_helper_commit_tail+0x38/0x80
+  commit_tail+0x7c/0x80
+  drm_atomic_helper_commit+0xdc/0x150
+  drm_atomic_commit+0x54/0x60
+  restore_fbdev_mode_atomic+0x198/0x238
+  restore_fbdev_mode+0x6c/0x1c0
+  drm_fb_helper_restore_fbdev_mode_unlocked+0x7c/0xf0
+  drm_fb_helper_set_par+0x34/0x60
+  drm_fb_helper_hotplug_event.part.28+0xb8/0xc8
+  drm_fbdev_client_hotplug+0xa4/0xe0
+  drm_client_dev_hotplug+0x90/0xe0
+  drm_kms_helper_hotplug_event+0x3c/0x48
+  drm_helper_hpd_irq_event+0x134/0x168
+  dw_hdmi_top_thread_irq+0x3c/0x50
+[...]
+WARNING: CPU: 0 PID: 1185 at drivers/gpu/drm/drm_vblank.c:1026 drm_vblank_put+0xb4/0xc8
+[...]
+ Call trace:
+  drm_vblank_put+0xb4/0xc8
+  drm_crtc_vblank_put+0x24/0x30
+  drm_atomic_helper_wait_for_vblanks.part.9+0x130/0x2b8
+  drm_atomic_helper_commit_tail+0x68/0x80
+[...]
+
+Only enabling the CRTC and vblank when state->enable == true in the first of
+atomic_begin() or atomic_enable() solves this race condition.
+
+To Summarize :
+- Make sure that the CRTC code will call the enable/disable_vblank hooks.
+- *Really* mask the Vsync IRQ
+- Initialize and enable vblank at the first _atomic_begin/_atomic_enable()
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/gpu/drm/meson/meson_crtc.c | 6 +++++-
- drivers/gpu/drm/meson/meson_venc.c | 3 +++
- 2 files changed, 8 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/meson/meson_crtc.c | 29 ++++++++++++++++++++++++++---
+ drivers/gpu/drm/meson/meson_venc.c |  3 +++
+ 2 files changed, 29 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/gpu/drm/meson/meson_crtc.c b/drivers/gpu/drm/meson/meson_crtc.c
-index d78168f979db3..a300556248fe8 100644
+index d78168f979db..7897ecfc35f9 100644
 --- a/drivers/gpu/drm/meson/meson_crtc.c
 +++ b/drivers/gpu/drm/meson/meson_crtc.c
-@@ -107,6 +107,8 @@ static void meson_crtc_atomic_enable(struct drm_crtc *crtc,
+@@ -46,6 +46,7 @@ struct meson_crtc {
+ 	struct drm_crtc base;
+ 	struct drm_pending_vblank_event *event;
+ 	struct meson_drm *priv;
++	bool enabled;
+ };
+ #define to_meson_crtc(x) container_of(x, struct meson_crtc, base)
+ 
+@@ -81,8 +82,7 @@ static const struct drm_crtc_funcs meson_crtc_funcs = {
+ 
+ };
+ 
+-static void meson_crtc_atomic_enable(struct drm_crtc *crtc,
+-				     struct drm_crtc_state *old_state)
++static void meson_crtc_enable(struct drm_crtc *crtc)
+ {
+ 	struct meson_crtc *meson_crtc = to_meson_crtc(crtc);
+ 	struct drm_crtc_state *crtc_state = crtc->state;
+@@ -106,6 +106,22 @@ static void meson_crtc_atomic_enable(struct drm_crtc *crtc,
+ 	writel_bits_relaxed(VPP_POSTBLEND_ENABLE, VPP_POSTBLEND_ENABLE,
  			    priv->io_base + _REG(VPP_MISC));
  
- 	priv->viu.osd1_enabled = true;
-+
 +	drm_crtc_vblank_on(crtc);
++
++	meson_crtc->enabled = true;
++}
++
++static void meson_crtc_atomic_enable(struct drm_crtc *crtc,
++				     struct drm_crtc_state *old_state)
++{
++	struct meson_crtc *meson_crtc = to_meson_crtc(crtc);
++	struct meson_drm *priv = meson_crtc->priv;
++
++	DRM_DEBUG_DRIVER("\n");
++
++	if (!meson_crtc->enabled)
++		meson_crtc_enable(crtc);
++
+ 	priv->viu.osd1_enabled = true;
  }
  
- static void meson_crtc_atomic_disable(struct drm_crtc *crtc,
-@@ -117,6 +119,8 @@ static void meson_crtc_atomic_disable(struct drm_crtc *crtc,
+@@ -117,6 +133,8 @@ static void meson_crtc_atomic_disable(struct drm_crtc *crtc,
  
  	DRM_DEBUG_DRIVER("\n");
  
@@ -33,7 +111,7 @@ index d78168f979db3..a300556248fe8 100644
  	priv->viu.osd1_enabled = false;
  	priv->viu.osd1_commit = false;
  
-@@ -128,7 +132,7 @@ static void meson_crtc_atomic_disable(struct drm_crtc *crtc,
+@@ -128,13 +146,15 @@ static void meson_crtc_atomic_disable(struct drm_crtc *crtc,
  			    VPP_VD1_PREBLEND | VPP_POSTBLEND_ENABLE, 0,
  			    priv->io_base + _REG(VPP_MISC));
  
@@ -42,8 +120,26 @@ index d78168f979db3..a300556248fe8 100644
  		spin_lock_irq(&crtc->dev->event_lock);
  		drm_crtc_send_vblank_event(crtc, crtc->state->event);
  		spin_unlock_irq(&crtc->dev->event_lock);
+ 
+ 		crtc->state->event = NULL;
+ 	}
++
++	meson_crtc->enabled = false;
+ }
+ 
+ static void meson_crtc_atomic_begin(struct drm_crtc *crtc,
+@@ -143,6 +163,9 @@ static void meson_crtc_atomic_begin(struct drm_crtc *crtc,
+ 	struct meson_crtc *meson_crtc = to_meson_crtc(crtc);
+ 	unsigned long flags;
+ 
++	if (crtc->state->enable && !meson_crtc->enabled)
++		meson_crtc_enable(crtc);
++
+ 	if (crtc->state->event) {
+ 		WARN_ON(drm_crtc_vblank_get(crtc) != 0);
+ 
 diff --git a/drivers/gpu/drm/meson/meson_venc.c b/drivers/gpu/drm/meson/meson_venc.c
-index ed7828ff3f542..0fbe525b94c89 100644
+index 9be0376e0329..ab72ddda242d 100644
 --- a/drivers/gpu/drm/meson/meson_venc.c
 +++ b/drivers/gpu/drm/meson/meson_venc.c
 @@ -71,6 +71,7 @@
@@ -54,7 +150,7 @@ index ed7828ff3f542..0fbe525b94c89 100644
  #define HHI_VDAC_CNTL0		0x2F4 /* 0xbd offset in data sheet */
  #define HHI_VDAC_CNTL1		0x2F8 /* 0xbe offset in data sheet */
  #define HHI_HDMI_PHY_CNTL0	0x3a0 /* 0xe8 offset in data sheet */
-@@ -1659,10 +1660,12 @@ unsigned int meson_venci_get_field(struct meson_drm *priv)
+@@ -1663,10 +1664,12 @@ unsigned int meson_venci_get_field(struct meson_drm *priv)
  void meson_venc_enable_vsync(struct meson_drm *priv)
  {
  	writel_relaxed(2, priv->io_base + _REG(VENC_INTCTRL));
@@ -67,3 +163,6 @@ index ed7828ff3f542..0fbe525b94c89 100644
  	writel_relaxed(0, priv->io_base + _REG(VENC_INTCTRL));
  }
  
+-- 
+2.19.1
+

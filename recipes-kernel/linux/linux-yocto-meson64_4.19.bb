@@ -79,6 +79,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
              file://overlay/0023-drm-meson-Output-in-YUV444-is-sink-supports-it.patch \
              file://overlay/0024-drm-meson-Add-implicit-fencing-support-for-primary-a.patch \
              file://overlay/e9b2ea418f40bcef8e4444265fba658373b1ca42.patch \
+             file://overlay/alpha.patch \
              \
              file://LE/0011-drm-meson-fix-max-height-width.patch \
              \
@@ -118,7 +119,6 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protoc
              file://LE/0023-ARM64-dts-meson-gx-add-sound-dai-cells-to-HDMI-node.patch \
              file://LE/0024-ARM64-dts-meson-activate-hdmi-audio-HDMI-enabled-boa.patch \
              file://LE/0025-drm-bridge-dw-hdmi-Use-AUTO-CTS-setup-mode-when-non-.patch \
-             file://LE/0026-drm-meson-Call-drm_crtc_vblank_on-drm_crtc_vblank_of.patch \
              file://LE/0046-ASoC-hdmi-codec-fix-channel-allocation.patch \
              file://LE/0047-drm-dw-hdmi-i2s-add-.get_eld-callback-for-ALSA-SoC.patch \
              file://LE/0048-drm-dw-hdmi-i2s-add-multi-channel-lpcm-support.patch \
